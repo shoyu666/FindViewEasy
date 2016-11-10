@@ -29,16 +29,17 @@ dependencies {
     compile project(':findviewlib')
 }
 
-buildscript {
-    repositories {
-        maven {
-            url 'file:../lib'
-        }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'com.shoyu666', name: 'findviewplugin',
-                version: '1.0-SNAPSHOT'
-    }
-}
-apply plugin: 'com.shoyu666.findvieweasyplugin'
+//buildscript {
+//    repositories {
+//        maven {
+//            url 'file:../lib'
+//        }
+//        mavenCentral()
+//        jcenter()
+//    }
+//    dependencies {
+//        classpath group: 'com.shoyu666', name: 'findviewplugin',
+//                version: '1.0-SNAPSHOT'
+//    }
+//}
+//apply plugin: 'com.shoyu666.findvieweasyplugin'

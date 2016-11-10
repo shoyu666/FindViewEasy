@@ -30,9 +30,17 @@ public class ClazzVisitor extends BaseAdapter {
     }
 
     @Override
+    MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
+        MethodVisitor before = super.visitMethod(access, name, desc, signature, exceptions)
+        MethodInfo methodInfo = new MethodInfo.Builder().access(access).name(name).desc(desc).signature(signature).exceptions(exceptions).build();
+        FindViewMethodVisitor newFindViewMethodVisitor = new FindViewMethodVisitor(Opcodes.ASM4, before, info, methodInfo);
+        return newFindViewMethodVisitor;
+    }
+
+    @Override
     public void visitEnd() {
-        if (info != null && info.annoedFileds.size() > 0) {
-            hook(info);
+        if (info != null&&(info.onClickMethod!=null||info.onClickMethod!=null)) {
+            process(info);
         }
         super.visitEnd();
     }

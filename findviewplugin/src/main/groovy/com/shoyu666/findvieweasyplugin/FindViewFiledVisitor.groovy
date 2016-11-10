@@ -33,7 +33,7 @@ public class FindViewFiledVisitor extends FieldVisitor {
             clazzInfo.addAnnoedFiled(fieldInfo);
             AnnotationVisitor before = super.visitAnnotation(desc, visible)
             System.out.println("###############################"+fieldInfo)
-            FindViewAnnotationVisitor newSaveStateAnnotationVisitor = new FindViewAnnotationVisitor(Opcodes.ASM4,before,fieldInfo);
+            FindViewFiledAnnotationVisitor newSaveStateAnnotationVisitor = new FindViewFiledAnnotationVisitor(Opcodes.ASM4,before,fieldInfo);
             return newSaveStateAnnotationVisitor;
         } else {
             return super.visitAnnotation(desc, visible);

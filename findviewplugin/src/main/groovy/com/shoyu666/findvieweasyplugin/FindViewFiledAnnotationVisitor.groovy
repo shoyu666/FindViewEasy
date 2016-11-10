@@ -4,17 +4,18 @@ import org.objectweb.asm.AnnotationVisitor
 
 
 /**
+ * Filed Annotation visitor
  * Created by shoyu666 on 2016/11/9.
  */
 
-public class FindViewAnnotationVisitor extends AnnotationVisitor {
+public class FindViewFiledAnnotationVisitor extends AnnotationVisitor {
     FiledInfo fieldInfo;
 
-    FindViewAnnotationVisitor(int i) {
+    FindViewFiledAnnotationVisitor(int i) {
         super(i)
     }
 
-    public FindViewAnnotationVisitor(int i, AnnotationVisitor annotationVisitor, FiledInfo fieldInfo) {
+    public FindViewFiledAnnotationVisitor(int i, AnnotationVisitor annotationVisitor, FiledInfo fieldInfo) {
         super(i, annotationVisitor)
         this.fieldInfo = fieldInfo;
     }

@@ -4,7 +4,6 @@ package com.shoyu666.findvieweasyplugin;
  * Created by shoyu666 on 2016/11/9.
  */
 public class FiledInfo {
-    //FiledInfo{access=0, name='ss', desc='Ljava/lang/String;', signature='null', value=null}
     public int access;
     public String name;
     public String desc;
