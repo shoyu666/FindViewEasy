@@ -47,3 +47,33 @@ public void likeButterKnife(View var1) {
 #### todo
 - onClick注入
 - ...
+
+#### 编译
+
+
+```
+step1
+app/build.gralde
+先注释掉
+//buildscript {
+//    repositories {
+//        maven {
+//            url 'file:../lib'
+//        }
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath group: 'com.shoyu666', name: 'findviewplugin',
+//                version: '1.0-SNAPSHOT'
+//    }
+//}
+//apply plugin: 'com.shoyu666.findvieweasyplugin'
+
+
+step2
+findviewplugin build.gralde
+运行 右侧 uploadArchives  生成lib
+
+step3
+取消step1的注释,运行
+```
