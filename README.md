@@ -13,10 +13,10 @@ findviewEasy
 ```
 import com.shoyu666.findviewlib.BindView;
 import com.shoyu666.findviewlib.ButterKnife;
+import com.shoyu666.findviewlib.OnClick;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity {
-
-    @BindView(R.id.textview) //注解
+    @BindView(R.id.textview)
     public TextView textview;
 
     @BindView(R.id.button)
@@ -26,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);//调用了编译阶段插入的方法 likeButterKnife(View v)
+        ButterKnife.bind(this);
         textview.setText("xxxxxxxxxxxxxxx");
         button.setText("bbbbbbbbbbbbbbb");
+    }
+
+    @OnClick({R.id.button, R.id.textview})
+    public void onClick(View v) {
+        Toast.makeText(this, "触发点击", Toast.LENGTH_LONG).show();
     }
 }
 ```
@@ -38,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
 ```
 编译阶段class插入代码
 public void likeButterKnife(View var1) {
-        this.textview = (TextView)var1.findViewById(2131427413);
-        this.button = (Button)var1.findViewById(2131427414);
+       this.textview = (TextView)var1.findViewById(2131427413);
+       this.button = (Button)var1.findViewById(2131427414);
+       var1.findViewById(2131427414).setOnClickListener(this);
+       var1.findViewById(2131427413).setOnClickListener(this);
 }
 ```
 #### 优点
