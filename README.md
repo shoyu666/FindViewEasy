@@ -43,7 +43,7 @@ public void likeButterKnife(View var1) {
 ```
 #### 优点
 - view注入的同时,没有ButterKnife 增加 *_ViewBinding类的负担,这点对于大工程比较实用
--
+
 #### todo
 - onClick注入
 - ...
