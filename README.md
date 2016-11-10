@@ -1,7 +1,8 @@
 findviewEasy
 
 #### 特性
-- view注入 
+- view注入
+- onClick绑定
 - view注入不增加class (这点是和ButterKnife本质的区别)
 - 和 ButterKnife api 保持一致
 
@@ -45,7 +46,6 @@ public void likeButterKnife(View var1) {
 - view注入的同时,没有ButterKnife 增加 *_ViewBinding类的负担,这点对于大工程比较实用
 
 #### todo
-- onClick注入
 - ...
 
 #### 编译
